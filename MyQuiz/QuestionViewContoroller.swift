@@ -37,6 +37,11 @@ class QuestionViewController : UIViewController {
         answer3Button.setTitle(questionData.answer3, for: UIControl.State.normal)
         answer4Button.setTitle(questionData.answer4, for: UIControl.State.normal)
 
+        answer1Button.backgroundColor = UIColor.lightGray
+        answer2Button.backgroundColor = UIColor.lightGray
+        answer3Button.backgroundColor = UIColor.lightGray
+        answer4Button.backgroundColor = UIColor.lightGray
+
     }
     
     @IBAction func tapAnswer1Button(_ sender: Any) {
@@ -64,7 +69,45 @@ class QuestionViewController : UIViewController {
             goNextQuestionWithCorrectAnimation()
         }else{
             goNextQuestionWithIncorrectAnimation()
+            
+            setInCorrectAnswerBackColor()
         }
+        
+        setCorrectAnswerBackColor()
+    }
+
+    func setCorrectAnswerBackColor(){
+
+        switch questionData.correctAnswerNumber {
+        case 1:
+            answer1Button.backgroundColor = UIColor.cyan
+        case 2:
+            answer2Button.backgroundColor = UIColor.cyan
+        case 3:
+            answer3Button.backgroundColor = UIColor.cyan
+        case 4:
+            answer4Button.backgroundColor = UIColor.cyan
+        default:
+            print("正解例外")
+        }
+
+    }
+    
+    func setInCorrectAnswerBackColor(){
+        
+        switch questionData.userChoiceAnswerNumber {
+        case 1:
+            answer1Button.backgroundColor = UIColor.red
+        case 2:
+            answer2Button.backgroundColor = UIColor.red
+        case 3:
+            answer3Button.backgroundColor = UIColor.red
+        case 4:
+            answer4Button.backgroundColor = UIColor.red
+        default:
+            print("不正解例外")
+        }
+        
     }
     
     func goNextQuestionWithCorrectAnimation(){
