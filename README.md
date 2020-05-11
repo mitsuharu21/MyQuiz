@@ -5,4 +5,6 @@
 
 動作環境 ・Swift version 4.2.1 ・Xcode Version 10.1 (10B61) ・MacBook Pro (Retina, 15-inch, Mid 2015)
 
-動作イメージ：https://youtu.be/QdQlhBICT60
+動作イメージ(2020/05/11)：https://youtu.be/UXmKnAVvK3w
+
+動作イメージ(2020/05/10)：https://youtu.be/QdQlhBICT60
